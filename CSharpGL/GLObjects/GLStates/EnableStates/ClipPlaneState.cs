@@ -48,7 +48,7 @@ namespace CSharpGL
             }
         }
 
-        private double[] equation;
+        private double[] equation = new double[4] { 0, 1, 0, 0, };
 
         /// <summary>
         /// Specifies the address of an array of four double-precision floating-point values. These values are interpreted as a plane equation.
@@ -65,7 +65,10 @@ namespace CSharpGL
                 }
                 else
                 {
-                    equation = value;
+                    for (int i = 0; i < 4; i++)
+                    {
+                        equation[i] = value[i];
+                    }
                 }
             }
         }
